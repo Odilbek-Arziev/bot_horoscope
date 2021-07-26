@@ -1,5 +1,7 @@
 messages = {
-    'greetings': "Привет, {name}!",
-    'choose_zodiac': "Выбери свой знак зодиака 👇",
-    'horoscope': "Гороскоп для {name}:\n{description}"
+    'greetings': "Hi, {name}!",
+    'choose_zodiac': "Choose you sign 👇",
+    'choose_day': 'Choose for which day you need horoscope 👇',
+    'horoscope': """💫 {compatibility} {date} 💫
+{description}"""
 }
