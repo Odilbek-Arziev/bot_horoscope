@@ -1,14 +1,14 @@
 import telebot
-import config
+from bot_token import TOKEN
 from keyboard import *
 import requests
 
 from messages import messages
 
-bot = telebot.TeleBot(config.TOKEN)
+bot = telebot.TeleBot(TOKEN)
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'help'])
 def start(message):
     bot.send_message(message.from_user.id, messages['greetings'].format(name=message.chat.first_name))
     bot.send_message(message.from_user.id, messages['choose_zodiac'], reply_markup=keyboard)
@@ -29,18 +29,18 @@ def get_sign(call):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
-    if call.message:
-        day = call.data
+    day = call.data
 
-        response = requests.post('https://aztro.sameerkumar.website/', params={'sign': sign, 'day': day})
-        json = response.json()
+    response = requests.post('https://aztro.sameerkumar.website/', params={'sign': sign, 'day': day})
+    json = response.json()
 
-        bot.delete_message(call.message.chat.id, call.message.message_id)
-        bot.send_message(call.message.chat.id, messages['horoscope'].format(
-            compatibility=json.get('compatibility'),
-            date=json.get('current_date'),
-            description=json.get('description')
-        ))
+    bot.delete_message(call.message.chat.id, call.message.message_id)
+    bot.send_message(call.message.chat.id, messages['horoscope'].format(
+        compatibility=json.get('compatibility'),
+        date=json.get('current_date'),
+        description=json.get('description')
+    ))
 
+    
 
 bot.polling(none_stop=True)
