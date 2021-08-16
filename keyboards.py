@@ -1,6 +1,7 @@
 from telebot import types
 
 keyboard = types.InlineKeyboardMarkup()
+daily_keyboard = types.InlineKeyboardMarkup()
 
 key_aries = types.InlineKeyboardButton(text='♈️ Aries', callback_data='aries')
 key_taurus = types.InlineKeyboardButton(text='♉️ Taurus', callback_data='taurus')
@@ -18,7 +19,6 @@ key_pisces = types.InlineKeyboardButton(text='♓️ Pisces', callback_data='pis
 keyboard.add(key_aries, key_taurus, key_gemini, key_cancer, key_leo, key_virgo, key_virgo,
              key_libra, key_scorpio, key_saggitarius, key_capricorn, key_aquarius, key_pisces)
 
-daily_keyboard = types.InlineKeyboardMarkup()
 
 yesterday = types.InlineKeyboardButton(text='Yesterday', callback_data='yesterday')
 today = types.InlineKeyboardButton(text='Today', callback_data='today')
