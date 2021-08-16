@@ -5,7 +5,7 @@
 1. Clone repository `https://github.com/Odilbek-Arziev/bot_horoscope.git`
 2. Create new virtual environment `mkvirtualenv bot`
 3. Install dependencies `pip install -r requirements.txt`
-4. Copy `config.py.example` as `config.py` and add bot token to `BOT_TOKEN`
+4. Copy `bot_token.py.example` as `bot_token.py` and add bot token to `TOKEN`
 
 ## Development Environment
 
