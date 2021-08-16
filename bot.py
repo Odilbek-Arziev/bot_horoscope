@@ -1,6 +1,6 @@
 import telebot
 from bot_token import TOKEN
-from keyboard import *
+from keyboards import *
 import requests
 
 from messages import messages
