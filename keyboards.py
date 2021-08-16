@@ -1,11 +1,11 @@
 from telebot import types
 
-keyboard = types.InlineKeyboardMarkup()
+keyboard = types.InlineKeyboardMarkup(row_width=4)
 daily_keyboard = types.InlineKeyboardMarkup()
 
 key_aries = types.InlineKeyboardButton(text='♈️ Aries', callback_data='aries')
 key_taurus = types.InlineKeyboardButton(text='♉️ Taurus', callback_data='taurus')
-key_gemini = types.InlineKeyboardButton(text='♊️ Gemini', callback_data='gemini')\
+key_gemini = types.InlineKeyboardButton(text='♊️ Gemini', callback_data='gemini')
 key_cancer = types.InlineKeyboardButton(text='♋️ Cancer', callback_data='cancer')
 key_leo = types.InlineKeyboardButton(text='♌️ Leo', callback_data='leo')
 key_virgo = types.InlineKeyboardButton(text='♍️ Virgo', callback_data='virgo')
